@@ -1,16 +1,54 @@
+/* const data = [
+    "Gergely Kiss",
+    "Krisztián Bui",
+    "Buczkó Balázs",
+    "András Varga",
+    "Borbála Teréz Kovács"
+];
+ */
+
+const data = [
+    {
+        name: "Gergely Kiss",
+        favoriteFood: "Csirke/Rizs"
+    },
+    {
+        name: "András Varga",
+        favoriteFood: "Brassói"
+    },
+    {
+        name: "Buczkó Balázs",
+        favoriteFood: "Kolbászos Rájás Pizza"
+    },
+    {
+        name: "Krisztián Bui",
+        favoriteFood: "Banán"
+    },
+    {
+        name: "Borbála Teréz Kovács",
+        favoriteFood: "Avokádó"
+    },
+    {
+        name: "Benett Viszokai",
+        favoriteFood: "alma"
+    },
+    {
+        name: "Krisztián Pörneczi",
+        favoriteFood: "Almáspite"
+    },
+]
 function loadEvent() {
-    console.log("Az oldal betöltődött")
+    console.log("Az oldal betöltődött");
 
-    const list = document.querySelectorAll("section")
-    
+    const root = document.querySelector("#root")
 
-    for (const elem of list) {
-        elem.insertAdjacentHTML("beforeend", `
-        <p>text</p>
+    for (const frontEndStudent of data) {
+        root.insertAdjacentHTML("beforeend", `
+            <section>
+                <h1>${frontEndStudent.name}</h1>
+                <p>${frontEndStudent.favoriteFood}</p>
+            </section>
         `)
-        //elem.querySelector("h1").outerHTML = ""
-        //elem.style.fontFamily = "Poppins"
-        // elem.querySelector("p").style.fontFamily = `'Poppins', sans-serif`
     }
 }
-window.addEventListener("load", loadEvent)
+window.addEventListener("load", loadEvent);
